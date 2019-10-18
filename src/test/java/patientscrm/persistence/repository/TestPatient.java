@@ -56,7 +56,7 @@ class TestPatient {
 	public void testFindBy() {
 		//given
 				String nom = "";
-				Patient patient = new Patient(, , );
+				Patient patient = new Patient( );
 				entityManager.persist(patient);
 				patient = new Patient(nom ,, );
 				entityManager.persist(patient);
