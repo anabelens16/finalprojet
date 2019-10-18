@@ -10,28 +10,35 @@ import javax.persistence.Id;
 public class Patient {
 	
 	private Integer idPatient;
-	private String civilite;
-	private String nom;
-	private String prenom;
-	private String adresse;
-	private Integer cp;
-	private String ville;
+	private String civility;
+	private String name;
+	private String firstname;
+	private String address;
+	private Integer zipcode;
+	private String city;
 	private String email;
-	private Integer telephone;
+	private String phone;
 	
 	public Patient(String civilite, String nom, String prenom, String adresse, Integer cp, String ville,
-			String email, Integer telephone) {
+			String email, String telephone) {
 		super();
 	
-		this.nom = nom;
-		this.prenom = prenom;
+		this.name = nom;
+		this.firstname = prenom;
 		this.email = email;
-		this.telephone = telephone;
+		this.phone = telephone;
 	}
+	public Patient(String nom, String prenom, String telephone) {
+        super();
+        this.name = nom;
+        this.firstname = prenom;
+        this.phone = telephone;
+    }
 	public Patient() {
 		super();
 	
 	}
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_patient")
@@ -42,40 +49,40 @@ public class Patient {
 		this.idPatient = idPatient;
 	}
 	public String getCivilite() {
-		return civilite;
+		return civility;
 	}
 	public void setCivilite(String civilite) {
-		this.civilite = civilite;
+		this.civility = civilite;
 	}
 	public String getNom() {
-		return nom;
+		return name;
 	}
 	public void setNom(String nom) {
-		this.nom = nom;
+		this.name = nom;
 	}
 	public String getPrenom() {
-		return prenom;
+		return firstname;
 	}
 	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+		this.firstname = prenom;
 	}
 	public String getAdresse() {
-		return adresse;
+		return address;
 	}
 	public void setAdresse(String adresse) {
-		this.adresse = adresse;
+		this.address = adresse;
 	}
 	public Integer getCp() {
-		return cp;
+		return zipcode;
 	}
 	public void setCp(Integer cp) {
-		this.cp = cp;
+		this.zipcode = cp;
 	}
 	public String getVille() {
-		return ville;
+		return city;
 	}
 	public void setVille(String ville) {
-		this.ville = ville;
+		this.city = ville;
 	}
 	public String getEmail() {
 		return email;
@@ -83,11 +90,11 @@ public class Patient {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Integer getTelephone() {
-		return telephone;
+	public String getTelephone() {
+		return phone;
 	}
-	public void setTelephone(Integer telephone) {
-		this.telephone = telephone;
+	public void setTelephone(String telephone) {
+		this.phone = telephone;
 	}
 	@Override
 	public String toString() {
