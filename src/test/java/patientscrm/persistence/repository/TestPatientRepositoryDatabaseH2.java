@@ -27,11 +27,11 @@ class TestPatientRepositoryDatabaseH2 {
 	@Test
     public void testFindOne() {
         //given
-        var nom = "DROUARD";
-        var prenom = "Romain";
-        var telephone = "06 19 75 45 99";
+        var name = "DROUARD";
+        var firstname = "Romain";
+        var phone = "06 19 75 45 99";
 
-        var patientInserted = new Patient(nom, prenom, telephone);
+        var patientInserted = new Patient(name, firstname, phone);
         entityManager.persist(patientInserted);
         entityManager.flush();
         Integer idPatient = patientInserted.getIdPatient();
@@ -40,9 +40,9 @@ class TestPatientRepositoryDatabaseH2 {
         //then
         assertAll(
                 ()-> assertEquals(idPatient, found.getIdPatient()),
-                ()-> assertEquals(nom, found.getNom()),
-                ()-> assertEquals(prenom, found.getPrenom()),
-                ()-> assertEquals(telephone, found.getTelephone())
+                ()-> assertEquals(name, found.getName()),
+                ()-> assertEquals(firstname, found.getFirstname()),
+                ()-> assertEquals(phone, found.getPhone())
                 );
     }
 @Test
