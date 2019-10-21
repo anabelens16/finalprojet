@@ -4,6 +4,7 @@ pipeline {
     stages{
         stage('build'){
             steps{
+     		sh "mvn -v"
                 sh "mvn -DskipTests clean  package"
   		}
             post{
