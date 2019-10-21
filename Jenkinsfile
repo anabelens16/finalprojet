@@ -4,12 +4,9 @@ pipeline {
     stages{
         stage('build'){
             steps{
-                sh "pwd"
-                sh "echo $JAVA_HOME"
-                sh "mvn --version"
-                sh "java --version"
-                sh "mvn clean compile"
-            }
+     		sh "mvn -v"
+                sh "mvn -DskipTests clean  package"
+  		}
             post{
             	always {
             		echo "build stage finished!!!!!"
@@ -21,6 +18,8 @@ pipeline {
             		echo "Pas bon le build"
             	}
             	success {
+		sh	"jar tvf target/patients.war | grep public"
+
             		echo "1 gommette pour le build"
             	}
             }
@@ -33,15 +32,10 @@ pipeline {
                 echo "test"
             }
         }
-        stage('package'){
-            steps{
-                sh "mvn -DskipTests package"
-            }
-        }
         stage('deliver'){
             steps{
                 echo "TODO : deliver"
-                sh "scp -i /root/.ssh/id_rsa /var/jenkins_home/workspace/PipelinePackaging/target/patients.war ubuntu@18.222.26.232:/ourapp/wildfly/webapps_target/patients.war"
+                sh "scp -i /root/.ssh/id_rsa target/patients.war ubuntu@18.222.26.232:/ourapp/wildfly/webapps_target/patients.war"
             }
         }
     }
