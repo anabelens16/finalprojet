@@ -35,7 +35,7 @@ pipeline {
         stage('deliver'){
             steps{
                 echo "TODO : deliver"
-                sh "scp -i /root/.ssh/id_rsa target/patients.war ubuntu@13.58.127.120:/ourapp/wildfly/webapps_target/patients.war"
+                sh "scp  target/patients.war root@13.58.127.120:/ourapp/wildfly/webapps_target/patients.war"
             }
         }
     }
