@@ -4,12 +4,8 @@ pipeline {
     stages{
         stage('build'){
             steps{
-                sh "pwd"
-                sh "echo $JAVA_HOME"
-                sh "mvn --version"
-                sh "java --version"
-                sh "mvn clean compile"
-            }
+                sh "mvn -DskipTests clean  package"
+  		}
             post{
             	always {
             		echo "build stage finished!!!!!"
