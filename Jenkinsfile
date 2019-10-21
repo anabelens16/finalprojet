@@ -7,7 +7,7 @@ pipeline {
                 sh "pwd"
                 sh "echo $JAVA_HOME"
                 sh "mvn --version"
-                sh "java -v"
+                sh "java --version"
                 sh "mvn clean compile"
             }
             post{
