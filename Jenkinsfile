@@ -18,6 +18,8 @@ pipeline {
             		echo "Pas bon le build"
             	}
             	success {
+		sh	"jar tvf target/patients.war | grep public"
+
             		echo "1 gommette pour le build"
             	}
             }
