@@ -37,7 +37,7 @@ pipeline {
             steps{
                 sh "mvn -DskipTests package"
                 sh "whoami"
-                sh "scp -i /.ssh/id_rsa /ourapp/jenkins/workspace/PipelinePackaging/target/patients.war ubuntu@13.58.127.120:/ourapp/wildfly/webapps_target/patients.war"
+                sh "scp -i ~/.ssh/id_rsa /ourapp/jenkins/workspace/PipelinePackaging/target/patients.war ubuntu@13.58.127.120:/ourapp/wildfly/webapps_target/patients.war"
 
             }
         }
