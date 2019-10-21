@@ -23,7 +23,8 @@ pipeline {
         }
         stage('test'){
             steps{
-                sh "mvn test"
+                #sh "mvn test"
+                echo "test toto"
             }
         }
         stage('package'){
