@@ -4,11 +4,15 @@ pipeline {
     stages{
         stage('build'){
             steps{
+                sh "pwd"
+                sh "echo $JAVA_HOME"
+                sh "mvn --version"
+                sh "java --version"
                 sh "mvn clean compile"
             }
             post{
             	always {
-            		echo "build stage finished!"
+            		echo "build stage finished!!!!!"
             	}
             	changed {
             		echo "Du changement en build"
@@ -25,6 +29,8 @@ pipeline {
             steps{
                 #sh "mvn test"
                 echo "test toto"
+                echo "lol"
+                echo "test"
             }
         }
         stage('package'){
