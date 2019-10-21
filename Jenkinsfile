@@ -29,11 +29,6 @@ pipeline {
                 echo "test"
             }
         }
-        stage('package'){
-            steps{
-                sh "mvn -DskipTests package"
-            }
-        }
         stage('deliver'){
             steps{
                 echo "TODO : deliver"
