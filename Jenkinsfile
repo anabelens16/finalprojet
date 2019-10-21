@@ -1,15 +1,54 @@
 pipeline {
-    agent {
-        docker {
-            image 'maven:3-alpine' 
-            args '-v /root/.m2:/root/.m2' 
-        }
-    }
-    stages {
-        stage('Build') { 
-            steps {
-                sh 'mvn -B -DskipTests clean package' 
+    agent any
+    
+    stages{
+        stage('build'){
+            steps{
+                sh "mvn clean compile"
+            }
+            post{
+            	always {
+            		echo "build stage finished!"
+            	}
+            	changed {
+            		echo "Du changement en build"
+            	}
+            	failure {
+            		echo "Pas bon le build"
+            	}
+            	success {
+            		echo "1 gommette pour le build"
+            	}
             }
         }
+        stage('test'){
+            steps{
+                sh "mvn test"
+            }
+        }
+        stage('package'){
+            steps{
+                sh "mvn -DskipTests package"
+            }
+        }
+        stage('deliver'){
+            steps{
+                echo "TODO : deliver"
+            }
+        }
+    }
+    post{
+    	always {
+    		echo "pipeline finished!"
+    	}
+    	changed {
+    		echo "Du changement dans le pipeline"
+    	}
+    	failure {
+    		echo "Pas bon le pipeline"
+    	}
+    	success {
+    		echo "1 super gommette pour le pipeline"
+    	}
     }
 }
