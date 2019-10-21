@@ -1,0 +1,10 @@
+body {
+	/*background-color: #fdf0fd;*/
+	background-color: pink;
+	/*background-color: #000000;*/
+}
+
+#formFilm {
+	display: flex;
+	flex-direction: column;
+}
