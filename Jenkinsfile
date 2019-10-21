@@ -8,7 +8,7 @@ pipeline {
             }
             post{
             	always {
-            		echo "build stage finished!"
+            		echo "build stage finished!!!!!"
             	}
             	changed {
             		echo "Du changement en build"
