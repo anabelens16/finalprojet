@@ -4,6 +4,8 @@ pipeline {
     stages{
         stage('build'){
             steps{
+                sh "pwd"
+                sh "echo $JAVA_HOME"
                 sh "mvn --version"
                 sh "java -v"
                 sh "mvn clean compile"
