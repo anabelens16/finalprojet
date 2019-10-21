@@ -4,7 +4,7 @@ pipeline {
     stages{
         stage('build'){
             steps{
-                sh "mvn clean compile"
+                sh "/usr/share/bin/mvn clean compile"
             }
             post{
             	always {
