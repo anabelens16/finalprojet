@@ -40,9 +40,9 @@ class TestPatientRepositoryDatabaseH2 {
         //then
         assertAll(
                 ()-> assertEquals(idPatient, found.getIdPatient()),
-                ()-> assertEquals(nom, found.getNom()),
-                ()-> assertEquals(prenom, found.getPrenom()),
-                ()-> assertEquals(telephone, found.getTelephone())
+                ()-> assertEquals(nom, found.getName()),
+                ()-> assertEquals(prenom, found.getFirstname()),
+                ()-> assertEquals(telephone, found.getPhone())
                 );
     }
 @Test

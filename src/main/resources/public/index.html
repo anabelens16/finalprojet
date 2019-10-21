@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Cinema</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+	  		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	  		crossorigin="anonymous"></script>
+	<script src="js/patient.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<header>
+	</header>
+	
+	<main>
+	
+		<section>
+		<h1>Patient</h1>
+		<!-- insert list films in JS consuming api Rest -->
+		<ul id="listePatient">
+		</ul>
+		</section>
+		
+		<section>
+		<h3>ajoutez votre patient</h3>
+		<!-- construct JSON patient and send it to api rest -->
+		<form id="formPatient">
+		<p>Civilite : <input id="civility" name="civility" type="text"></p>
+		<p>nom<input id="name" name="name" type="text"></p>
+		<p>prenom <input id="firstname" name="firstname" type="text"></p>
+		<p>email <input id="email" name="email" type="text"></p>
+		<p>telephone<input id="phone" name="phone" type="text"></p>
+		<p><input value="rajouter" type="submit"></p>
+		</form>
+		</section>
+	</main>
+	
+	<footer>
+	</footer>
+</body>
+</html>

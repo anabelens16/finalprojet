@@ -9,6 +9,6 @@ import patientscrm.persistence.entity.Patient;
 
 public interface PatientRepository extends JpaRepository<Patient , Integer>{
 
-	Set<Patient> findByNom(String nom);
+	Set<Patient> findByName(String name);
 
 }

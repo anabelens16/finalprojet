@@ -48,41 +48,42 @@ public class Patient {
 	public void setIdPatient(Integer idPatient) {
 		this.idPatient = idPatient;
 	}
-	public String getCivilite() {
+	
+	public String getCivility() {
 		return civility;
 	}
-	public void setCivilite(String civilite) {
-		this.civility = civilite;
+	public void setCivility(String civility) {
+		this.civility = civility;
 	}
-	public String getNom() {
+	public String getName() {
 		return name;
 	}
-	public void setNom(String nom) {
-		this.name = nom;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getPrenom() {
+	public String getFirstname() {
 		return firstname;
 	}
-	public void setPrenom(String prenom) {
-		this.firstname = prenom;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
-	public String getAdresse() {
+	public String getAddress() {
 		return address;
 	}
-	public void setAdresse(String adresse) {
-		this.address = adresse;
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	public Integer getCp() {
+	public Integer getZipcode() {
 		return zipcode;
 	}
-	public void setCp(Integer cp) {
-		this.zipcode = cp;
+	public void setZipcode(Integer zipcode) {
+		this.zipcode = zipcode;
 	}
-	public String getVille() {
+	public String getCity() {
 		return city;
 	}
-	public void setVille(String ville) {
-		this.city = ville;
+	public void setCity(String city) {
+		this.city = city;
 	}
 	public String getEmail() {
 		return email;
@@ -90,23 +91,23 @@ public class Patient {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getTelephone() {
+	public String getPhone() {
 		return phone;
 	}
-	public void setTelephone(String telephone) {
-		this.phone = telephone;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 	@Override
 	public String toString() {
 		return new StringBuilder(this.getIdPatient())
 				.append(" (")
-				.append(this.getNom())
+				.append(this.getName())
 				.append(", ")
-				.append(this.getPrenom())
+				.append(this.getFirstname())
 				.append(", ")
 				.append(this.getEmail())
 				.append(", ")
-				.append(this.getTelephone())
+				.append(this.getPhone())
 				.append(")")
 				.toString();
 	}
