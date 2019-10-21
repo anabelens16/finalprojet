@@ -27,7 +27,7 @@ pipeline {
         }
         stage('test'){
             steps{
-                #sh "mvn test"
+                //sh "mvn test"
                 echo "test toto"
                 echo "lol"
                 echo "test"
@@ -41,6 +41,7 @@ pipeline {
         stage('deliver'){
             steps{
                 echo "TODO : deliver"
+                sh "scp -i /root/.ssh/id_rsa /var/jenkins_home/workspace/PipelinePackaging/target/patients.war ubuntu@13.58.127.120:/ourapp/wildfly/webapps_target/patients.war"
             }
         }
     }
